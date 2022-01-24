@@ -25,8 +25,7 @@ In your `config.rb` you can configure the settings as follow:
 ```ruby
 activate :matomomiddleman do |p|
   p.domain = '<your-domain>'
-  p.url = '<your-url>'
-  p.id = 1
+  p.id = '<your-id>
 end
 ```
 
@@ -45,21 +44,17 @@ which will expand to
 
 ```erb
 <script type="text/javascript">
-  var _paq = _paq || [];
+  var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-  var u=(("https:" == document.location.protocol) ? "https" : "http") + "://<your-domain>/<your-url>/";
-  _paq.push(['setTrackerUrl', u+'piwik.php']);
-  _paq.push(['setSiteId', 1]);
-  var d=document, g=d.createElement('script'),
-  s=d.getElementsByTagName('script')[0];
-  g.type='text/javascript';
-  g.defer=true; g.async=true;
-  g.src=u+'piwik.js';
-  s.parentNode.insertBefore(g,s);
+    var u="//<your-domain>/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', "<your-id>"]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="https://<your-domain>/<your-url>/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="https://<your-domain>/matomo.php?idsite=<your-id>&amp;rec=1" style="border:0" alt="" /></p></noscript>
 ```
 

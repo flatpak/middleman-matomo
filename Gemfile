@@ -2,7 +2,7 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in piwik-middleman.gemspec
+# Specify your gem's dependencies in matomo-middleman.gemspec
 gemspec
 
 group :development do
